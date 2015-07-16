@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>GraphmathJS</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script type="text/javascript" src="GraphmathJS.js"></script>
+<script type="text/javascript" src="Demo.js"></script>
+</head>
+<body>
+<div ng-app="mathWidget" ng-controller="mathWidgetController as widget">
+	<div id='raphealDiv' style='margin-left: 50px;' ng-init="widget.drawWidgets()">
+		<div id="clockExample" style='display: inline-block;float:left'>
+			
+		</div>
+		<div style='display: inline-block;;float:left'>
+			<table><tr><td>
+			<label>Radius</label><input type="text"  ng-model="widget.clockParams.radius"  ng-change="widget.drawClock()"/></td><td>
+			<label>Inner Circle (fill)</label><input type="text"  ng-model="widget.clockParams.innerCircleStyle.fill"  ng-change="widget.drawClock()"/></td></tr><tr><td>			
+			<label>Inner Circle stroke</label><input type="text"  ng-model="widget.clockParams.innerCircleStyle.stroke"  ng-change="widget.drawClock()"/></td><td>
+			<label>Inner Circle stroke-width</label><input type="text"  ng-model="widget.clockParams.innerCircleStyle['stroke-width']"  ng-change="widget.drawClock()"/></td></tr>
+			<tr><td><label>Outer Circle stroke</label><input type="text"  ng-model="widget.clockParams.outerCircleStyle.stroke"  ng-change="widget.drawClock()"/></td><td><label>Outer Circle stroke-width</label><input type="text"  ng-model="widget.clockParams.outerCircleStyle['stroke-width']"  ng-change="widget.drawClock()"/></td></tr><tr>
+			<td><label>Tick stroke</label><input type="text"  ng-model="widget.clockParams['tick-style'].stroke"  ng-change="widget.drawClock()"/></td><td><label>Tick stroke</label><input type="text"  ng-model="widget.clockParams['tick-style'].stroke"  ng-change="widget.drawClock()"/></td></tr>
+			</table>
+			<!-- <button type="button" ng-click="widget.drawClock()">DrawClock</button> -->
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
