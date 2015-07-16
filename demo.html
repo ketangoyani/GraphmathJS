@@ -11,7 +11,6 @@
 <div ng-app="mathWidget" ng-controller="mathWidgetController as widget">
 	<div id='raphealDiv' style='margin-left: 50px;' ng-init="widget.drawWidgets()">
 		<div id="clockExample" style='display: inline-block;float:left'>
-			
 		</div>
 		<div style='display: inline-block;;float:left'>
 			<table><tr><td>
@@ -20,7 +19,10 @@
 			<label>Inner Circle stroke</label><input type="text"  ng-model="widget.clockParams.innerCircleStyle.stroke"  ng-change="widget.drawClock()"/></td><td>
 			<label>Inner Circle stroke-width</label><input type="text"  ng-model="widget.clockParams.innerCircleStyle['stroke-width']"  ng-change="widget.drawClock()"/></td></tr>
 			<tr><td><label>Outer Circle stroke</label><input type="text"  ng-model="widget.clockParams.outerCircleStyle.stroke"  ng-change="widget.drawClock()"/></td><td><label>Outer Circle stroke-width</label><input type="text"  ng-model="widget.clockParams.outerCircleStyle['stroke-width']"  ng-change="widget.drawClock()"/></td></tr><tr>
-			<td><label>Tick stroke</label><input type="text"  ng-model="widget.clockParams['tick-style'].stroke"  ng-change="widget.drawClock()"/></td><td><label>Tick stroke</label><input type="text"  ng-model="widget.clockParams['tick-style'].stroke"  ng-change="widget.drawClock()"/></td></tr>
+			<td><label>Tick stroke</label><input type="text"  ng-model="widget.clockParams['tick-style'].stroke"  ng-change="widget.drawClock()"/></td><td><label>Centre Circle Fill</label><input type="text"  ng-model="widget.clockParams['pin-style'].fill"  ng-change="widget.drawClock()"/></td></tr>
+			<tr><td><label>Drag hour hand</label><input type="checkbox"  ng-model="widget.clockParams['drag-hour-hand']"  ng-change="widget.drawClock()"/></td><td><label>Drag minute hand</label><input type="checkbox"  ng-model="widget.clockParams['drag-minute-hand']"  ng-change="widget.drawClock()"/></td><td><button ng-click="widget.getTimescop()" ng-show="widget.clockParams['drag-hour-hand'] || widget.clockParams['drag-minute-hand']">show time</button></td></tr>
+			<tr><td ><label >Time  Hour</label><input ng-show="!widget.clockParams['drag-hour-hand']" type="number" min="1" max="12"  ng-model="widget.clockParams.defaultTime.hour"  ng-change="widget.drawClock()"/></td><td><label> Minute</label><input ng-show="!widget.clockParams['drag-minute-hand']" type="number" min="0" max="59"  ng-model="widget.clockParams.defaultTime.minute"  ng-change="widget.drawClock()"/></td></tr>			
+			
 			</table>
 			<!-- <button type="button" ng-click="widget.drawClock()">DrawClock</button> -->
 		</div>
